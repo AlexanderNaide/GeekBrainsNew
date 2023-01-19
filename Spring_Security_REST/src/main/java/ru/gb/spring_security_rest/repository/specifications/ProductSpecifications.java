@@ -1,7 +1,7 @@
 package ru.gb.spring_security_rest.repository.specifications;
 
 import org.springframework.data.jpa.domain.Specification;
-import ru.gb.spring_security_rest.model.Product;
+import ru.gb.spring_security.model.Product;
 
 public class ProductSpecifications {
 

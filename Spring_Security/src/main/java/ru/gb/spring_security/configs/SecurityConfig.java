@@ -1,4 +1,4 @@
-package ru.gb.spring_security_rest.configs;
+package ru.gb.spring_security.configs;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,16 +27,16 @@ public class SecurityConfig {
 
         return http.
                 authorizeHttpRequests().
-                requestMatchers("/auth_page/**").authenticated().
-                requestMatchers("/user_info").authenticated().
+//                requestMatchers("/auth_page/**").authenticated().
+//                requestMatchers("/user_info").authenticated().
                 requestMatchers("/admin/**").hasAnyRole("ADMIN", "SUPERADMIN").
-                requestMatchers("/api/v1/products/**").permitAll().
                 anyRequest().permitAll().
+                and().formLogin().
                 and().logout().invalidateHttpSession(true).deleteCookies("JSESSIONID").
                 and().build();
     }
 
-    @Bean
+/*    @Bean
     public UserDetailsService users(){
         UserDetails user = User.builder()
                 .username("user")
@@ -51,7 +51,7 @@ public class SecurityConfig {
                 .build();
 
         return new InMemoryUserDetailsManager(user, admin);
-    }
+    }*/
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder(){

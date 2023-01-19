@@ -19,6 +19,7 @@
         <module>Spring_REST</module>
         <module>Spring_REST2</module>
         <module>Spring_Security_REST</module>
+        <module>Spring_Security</module>
     </modules>
 
     <properties>

@@ -1,8 +1,7 @@
-package ru.gb.spring_security_rest.model;
+package ru.gb.spring_security.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import ru.gb.spring_security.model.Role;
 
 import java.util.Collection;
 

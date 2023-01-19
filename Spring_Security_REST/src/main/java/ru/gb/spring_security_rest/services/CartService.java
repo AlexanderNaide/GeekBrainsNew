@@ -3,7 +3,8 @@ package ru.gb.spring_security_rest.services;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.gb.spring_security_rest.model.Product;
+import ru.gb.spring_security.model.Product;
+import ru.gb.spring_security.services.ProductService;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
