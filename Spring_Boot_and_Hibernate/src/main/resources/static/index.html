@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>-->
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="index.js"></script>
+
+    <title>Boot HomeWork</title>
+</head>
+
+
+
+<body>
+<div class="container" ng-controller="indexController">
+
+    <div class="row align-items-start" style="height: 140px; padding: 30px;">
+            <h1>GeekBrains   HomeWork 8</h1>
+    </div>
+
+    <div class="row align-items-start">
+        <div class="col-3">
+
+            <form id="formFilter" novalidate ng-submit="addFilter()">
+
+                <h4>Фильтр</h4>
+
+                <label for="minPrice">Минимальная цена</label>
+                <input class="form-control" type="number" ng-model="filter.min" id="minPrice">
+
+
+                <label for="maxPrice">Максимальная цена</label>
+                <input class="form-control" type="number" ng-model="filter.max" id="maxPrice" style="margin-bottom: 30px">
+
+
+                <button type="button" class="btn btn-secondary" ng-click="resetFilter()">Сбросить</button>
+                <button class="btn btn-success" type="submit">Применить</button>
+
+
+            </form>
+
+
+        </div>
+        <div class="col-9">
+
+            <nav class="navbar bg-light">
+                <div class="container-fluid">
+                    <div class="col-8">
+                        <a class="navbar-brand"> <h3>Список продуктов</h3></a>
+                    </div>
+                    <div class="col-4">
+                        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск" ng-model="value" ng-change="searchForm()">
+                    </div>
+                </div>
+            </nav>
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Наименование</th>
+                    <th>Цена</th>
+                    <th>Функция</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="p in ProductsList">
+                    <td>{{p.id}}</td>
+                    <td>{{p.title}}</td>
+                    <td>{{p.price}}</td>
+                    <td>
+                        <button class="btn btn-danger" ng-click="deleteProduct(p.id)">Удалить</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+                Добавить продукт
+            </button>
+
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form id="form" novalidate ng-submit="addProduct()">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Добавить продукт</h5>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group mb-3">
+                            <label for="newProductTitle">Наименование</label>
+                            <input class="form-control" type="text" ng-model="newProduct.title" id="newProductTitle">
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="newProductCost">Цена</label>
+                            <input class="form-control" type="number" ng-model="newProduct.price" id="newProductCost">
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                        <button class="btn btn-success" type="submit">Сохранить</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+</div>
+
+
+</body>
+</html>
