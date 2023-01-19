@@ -1,0 +1,60 @@
+INFO  2022-09-05 16:20:30 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:28) - Info
+DEBUG 2022-09-05 16:20:30 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:31) - Debug
+INFO  2022-09-05 16:20:30 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:34) - Info message (Insert message
+WARN  2022-09-05 16:20:30 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:35) - Warning
+ERROR 2022-09-05 16:20:30 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:36) - Error
+INFO  2022-09-07 12:54:56 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:29) - Info
+DEBUG 2022-09-07 12:54:56 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:32) - Debug
+INFO  2022-09-07 12:54:56 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:35) - Info message (Insert message)
+WARN  2022-09-07 12:54:56 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:36) - Warning
+ERROR 2022-09-07 12:54:56 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:37) - Error
+INFO  2022-09-07 12:55:35 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:29) - Info
+DEBUG 2022-09-07 12:55:35 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:32) - Debug
+INFO  2022-09-07 12:55:35 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:35) - Info message (Insert message)
+WARN  2022-09-07 12:55:35 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:36) - Warning
+ERROR 2022-09-07 12:55:35 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:37) - Error
+INFO  2022-09-07 12:57:16 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:29) - Info
+DEBUG 2022-09-07 12:57:16 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:32) - Debug
+INFO  2022-09-07 12:57:16 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:35) - Info message (Insert message)
+WARN  2022-09-07 12:57:16 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:36) - Warning
+ERROR 2022-09-07 12:57:16 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:37) - Error
+INFO  2022-09-07 13:00:44 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:29) - Info
+DEBUG 2022-09-07 13:00:44 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:32) - Debug
+INFO  2022-09-07 13:00:44 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:35) - Info message (Insert message)
+WARN  2022-09-07 13:00:44 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:36) - Warning
+ERROR 2022-09-07 13:00:44 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:37) - Error
+INFO  2022-09-07 13:07:26 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:26) - Info
+DEBUG 2022-09-07 13:07:26 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:29) - Debug
+INFO  2022-09-07 13:07:26 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:32) - Info message (Insert message)
+WARN  2022-09-07 13:07:26 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:33) - Warning
+ERROR 2022-09-07 13:07:26 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:34) - Error
+INFO  2022-09-07 13:26:37 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:26) - Info
+DEBUG 2022-09-07 13:26:37 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:29) - Debug
+INFO  2022-09-07 13:26:37 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:32) - Info message (Insert message)
+WARN  2022-09-07 13:26:37 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:33) - Warning
+ERROR 2022-09-07 13:26:37 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:34) - Error
+INFO  2022-09-07 13:28:23 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:26) - Info
+DEBUG 2022-09-07 13:28:23 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:29) - Debug
+INFO  2022-09-07 13:28:23 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:32) - Info message (Insert message)
+WARN  2022-09-07 13:28:23 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:33) - Warning
+ERROR 2022-09-07 13:28:23 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:34) - Error
+INFO  2022-09-07 13:30:11 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:26) - Info
+DEBUG 2022-09-07 13:30:11 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:29) - Debug
+INFO  2022-09-07 13:30:11 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:32) - Info message (Insert message)
+WARN  2022-09-07 13:30:11 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:33) - Warning
+ERROR 2022-09-07 13:30:11 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:34) - Error
+INFO  2022-09-07 13:30:25 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:26) - Info
+DEBUG 2022-09-07 13:30:25 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:29) - Debug
+INFO  2022-09-07 13:30:25 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:32) - Info message (Insert message)
+WARN  2022-09-07 13:30:25 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:33) - Warning
+ERROR 2022-09-07 13:30:25 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:34) - Error
+INFO  2022-09-07 13:35:18 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:26) - Info
+DEBUG 2022-09-07 13:35:18 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:29) - Debug
+INFO  2022-09-07 13:35:18 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:32) - Info message (Insert message)
+WARN  2022-09-07 13:35:18 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:33) - Warning
+ERROR 2022-09-07 13:35:18 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:34) - Error
+INFO  2022-09-07 13:35:48 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:26) - Info
+DEBUG 2022-09-07 13:35:48 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:29) - Debug
+INFO  2022-09-07 13:35:48 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:32) - Info message (Insert message)
+WARN  2022-09-07 13:35:48 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:33) - Warning
+ERROR 2022-09-07 13:35:48 [main] ru.gb.HomeWorks_core3.lesson6.HomeWorkApp (HomeWorkApp.java:34) - Error
