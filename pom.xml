@@ -3,10 +3,22 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>ru.gb</groupId>
     <artifactId>GeekBrainsNew</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <modules>
+<!--        <module>Java_Start</module>-->
+        <module>JavaEE</module>
+<!--        <module>Spring_Context</module>-->
+<!--        <module>Spring_MVC</module>-->
+<!--        <module>Hibernate</module>-->
+<!--        <module>Spring_Context_and_Hibernate</module>-->
+<!--        <module>Spring_Boot_and_Hibernate</module>-->
+<!--        <module>Spring_REST</module>-->
+<!--        <module>Spring_REST2</module>-->
+    </modules>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
