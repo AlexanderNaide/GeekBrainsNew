@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products</title>
+	<link th:href="@{/styles/css/style.css}" rel="stylesheet" type="text/css">
+<!--<link href="../../static/css/style.css" rel="stylesheet" type="text/css">-->
+</head>
+
+<body style="font-family: Cambria, 'Hoefler Text', 'Liberation Serif', Times, 'Times New Roman', serif">
+<div>
+	<label id="mvc">Spring MVC HomeWork<br></label>
+	<label id="title">All products</label>
+</div>
+<div>
+  <table>
+		<thead>
+			<tr>
+				<th width="80" scope="col">ID</th>
+				<th scope="col">Title</th>
+				<th width="120" scope="col">Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="product : ${products}">
+				<td><a th:href="|@{/product/}${product.getId}|" th:text="${product.getId}">...</a></td>
+				<td><a th:href="|@{/product/}${product.getId}|" th:text="${product.getTitle}">...</a></td>
+				<td><a th:href="|@{/product/}${product.getId}|" th:text="${product.getCost}">...</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<a th:href="@{/product/addPage}"><button>+ Add</button></a>
+</div>
+</body>
+</html>

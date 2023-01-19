@@ -4,6 +4,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/JavaEE" />
     <file type="web" url="file://$PROJECT_DIR$/Spring_Boot_and_Hibernate" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring_MVC" />
     <file type="web" url="file://$PROJECT_DIR$/Spring_REST" />
   </component>
   <component name="MavenProjectsManager">

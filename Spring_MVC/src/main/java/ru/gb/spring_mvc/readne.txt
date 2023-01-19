@@ -1,0 +1,103 @@
+Для создания надо:
+    + новый модуль Spring Initializr
+    Project - maven
+    Language - java
+    Spring Boot - 3.0.0
+    остальное как нравиться
+    -> next
+        + добавить зависимости:
+        Spring Web
+        Thymeleaf
+
+Создаемся.
+В Pom.xml добавить строку <version>:
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>2.7.6</version>
+                    сюда.
+
+Далее Application.properties меняем на Application.yml (синтаксис удобнее)
+Настройки для Application.yml:
+server:
+  port: 8080             -- порт, на котором будет стартовать tomcat
+  servlet:
+    context-path: /app   -- корневой префикс приложения.
+-- Дополнительно --
+(Для изменения расширения файлов шаблонов страниц (ну вдруг зачем-то понадобится))
+spring:
+  thymeleaf:
+    suffix: .html2
+(Для изменения папки шаблонов страниц)
+spring:
+  thymeleaf:
+    prefix: /pages
+(Для более-менее читаемого представления json)
+spring:
+  jackson:
+    serialization:
+      indent-output: true
+
+
+Если не менять расширение, то настройки для Application.properties:
+server.port=8080
+server.servlet.context-path=/app
+
+
+Много полезного по подключению ресурсов
+https://ru.stackoverflow.com/questions/1211649/thymeleaf-не-подключает-css-файл
+
+
+Тестировать html запросы удобно в Postman
+https://www.postman.com/downloads/?utm_source=postman-home
+
+
+
+
+
+
+
+
+
+
+Если создаем Spring проект внутри родительского (не Spring BOOT) проекта нужно следующее:
+
+В Spring-говском Pom.xml перенести наследование от spring-boot-starter-parent в отдельную зависимость:
+
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <!-- Import dependency management from Spring Boot -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>3.0.0</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+
+Я копировал весь этот блок перед штатными </dependencies> - работает.
+
+Офф доки по maven на Spring:
+https://docs.spring.io/spring-boot/docs/3.0.0/maven-plugin/reference/htmlsingle/
+Там разобрано много ситуаций и много полезного по подключению зависимостей.
+
+Теперь в Parent можно указать родительский основной проект:
+
+    <parent>
+        <artifactId>GeekBrains</artifactId>
+        <groupId>ru.gb</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+Далее в родительском Pom.xml в модулях добавляем спринговский модуль:
+
+<module>Spring_MVC</module>
+
+Далее самое интересное...
+Если папка с модулем стала красной - открываем её в проводнике и удаляем оттуда скрытую папку .Git
+Было также:
+    Ругаться на VCS root - открыть Configure (или Settings -> Version control -> Directory mappings)
+    -> открыть ошибочную директорию и изменить на Project
+Потом надо снова добавить проект к Git:
+правой кнопкой на папке Spring проекта -> Git -> +Add
