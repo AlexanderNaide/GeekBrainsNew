@@ -7,11 +7,11 @@
         <groupId>ru.gb</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>Spring_REST2</artifactId>
+    <artifactId>Spring_Security_REST</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-    <name>Spring_REST2</name>
-    <description>Spring_REST2</description>
+    <name>Spring_Security_REST</name>
+    <description>Spring_Security_REST</description>
     <properties>
         <java.version>19</java.version>
     </properties>

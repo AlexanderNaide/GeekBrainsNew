@@ -1,15 +1,15 @@
-package ru.gb.spring_rest2.api;
+package ru.gb.spring_security_rest.api;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
-import ru.gb.spring_rest2.converters.ProductConverter;
-import ru.gb.spring_rest2.exceptions.ResourceNotFoundException;
-import ru.gb.spring_rest2.model.ProductDto;
-import ru.gb.spring_rest2.model.ProductFullDto;
-import ru.gb.spring_rest2.model.ProductToCartDto;
-import ru.gb.spring_rest2.services.CartService;
-import ru.gb.spring_rest2.services.ProductService;
+import ru.gb.spring_security_rest.converters.ProductConverter;
+import ru.gb.spring_security_rest.exceptions.ResourceNotFoundException;
+import ru.gb.spring_security_rest.model.ProductDto;
+import ru.gb.spring_security_rest.model.ProductFullDto;
+import ru.gb.spring_security_rest.model.ProductToCartDto;
+import ru.gb.spring_security_rest.services.CartService;
+import ru.gb.spring_security_rest.services.ProductService;
 
 import java.util.List;
 import java.util.stream.Collectors;

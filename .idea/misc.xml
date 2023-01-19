@@ -7,11 +7,13 @@
     <file type="web" url="file://$PROJECT_DIR$/Spring_MVC" />
     <file type="web" url="file://$PROJECT_DIR$/Spring_REST" />
     <file type="web" url="file://$PROJECT_DIR$/Spring_REST2" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring_Security_REST" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_Security_REST/pom.xml" />
       </list>
     </option>
   </component>
