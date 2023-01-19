@@ -15,7 +15,7 @@
 <!--        <module>Spring_MVC</module>-->
         <module>Hibernate</module>
 <!--        <module>Spring_Context_and_Hibernate</module>-->
-<!--        <module>Spring_Boot_and_Hibernate</module>-->
+        <module>Spring_Boot_and_Hibernate</module>
         <module>Spring_REST</module>
 <!--        <module>Spring_REST2</module>-->
     </modules>

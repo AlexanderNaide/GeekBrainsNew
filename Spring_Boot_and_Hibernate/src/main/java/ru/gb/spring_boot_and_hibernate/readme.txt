@@ -1,0 +1,28 @@
+Зависимости:
+    Spring Web
+    Lombok
+    Spring Data JPA     - основное для работы с БД
+    MySQL
+
+
+
+
+Настройки в application.yml
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_hibernate?createDatabaseIfNotExist=true
+    username: root
+    password: 6830
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+  jackson:
+    serialization:
+      indent-output: true
+  jooq:
+    sql-dialect: org.hibernate.dialect.MySQLDialect
