@@ -25,9 +25,9 @@ public class UserController {
         return "unsecured";
     }
 
-    @GetMapping("/auth_page")
-    public String authenticatedPage(){
-        return "authenticated";
+    @GetMapping("/messages")
+    public String readMessages(){
+        return "messages";
     }
 
     @GetMapping("/admin")
@@ -36,6 +36,7 @@ public class UserController {
         return "admin";
     }
 
+    @GetMapping("/user_info")
     public String daoTestPage(Principal principal){
         User user = userService.findByUsername(principal.getName()).orElseThrow(RuntimeException::new);
         return "Authenticated user info: " + user.getUsername() + " : " + user.getEmail();

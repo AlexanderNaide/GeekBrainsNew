@@ -3,18 +3,21 @@ package ru.gb.spring_security.services;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.EventListener;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.stereotype.Service;
 import ru.gb.spring_security.model.Role;
 import ru.gb.spring_security.model.User;
 import ru.gb.spring_security.repository.RoleRepository;
 import ru.gb.spring_security.repository.UserRepository;
 
+import javax.sql.DataSource;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -29,6 +32,11 @@ public class UserService implements UserDetailsService {
 
     public Optional<User> findByUsername(String username){
         return userRepository.findByUsername(username);
+    }
+
+    @Bean
+    public JdbcUserDetailsManager users(DataSource dataSource){
+        return new JdbcUserDetailsManager(dataSource);
     }
 
     @Override
@@ -57,7 +65,7 @@ public class UserService implements UserDetailsService {
 
         User user = new User();
         user.setUsername("user");
-        user.setPassword("$2a$12$ehFtjJAtsDhZVIvVLKImEuaNa.QeCa4w6zGqVFjfjTcRrrGcTblmy");
+        user.setPassword("$2a$12$odCCUlrDhmdqAOO4tiJcpenIRIJytzswlJDhFvGn60k11ZcBFZMD.");
         user.setEmail("us@us.ru");
 
         User admin = new User();
