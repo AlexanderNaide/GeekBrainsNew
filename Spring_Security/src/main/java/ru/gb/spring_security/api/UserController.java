@@ -1,6 +1,7 @@
-package ru.gb.spring_security_rest.api;
+package ru.gb.spring_security.api;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.gb.spring_security.model.User;
@@ -24,9 +25,9 @@ public class UserController {
         return "unsecured";
     }
 
-    @GetMapping("/auth_page")
-    public String authenticatedPage(){
-        return "authenticated";
+    @GetMapping("/messages")
+    public String readMessages(){
+        return "messages";
     }
 
     @GetMapping("/admin")
@@ -35,6 +36,7 @@ public class UserController {
         return "admin";
     }
 
+    @GetMapping("/user_info")
     public String daoTestPage(Principal principal){
         User user = userService.findByUsername(principal.getName()).orElseThrow(RuntimeException::new);
         return "Authenticated user info: " + user.getUsername() + " : " + user.getEmail();

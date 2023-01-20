@@ -1,4 +1,4 @@
-package ru.gb.spring_security_rest.repository;
+package ru.gb.spring_security.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
