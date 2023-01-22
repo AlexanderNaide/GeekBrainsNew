@@ -17,4 +17,10 @@ public class ProductDto {
 
     private Double price;
 
+/*    public ProductDto(Product product) {
+        this.id = product.getId();
+        this.article = product.getArticle();
+        this.title = product.getTitle();
+        this.price = product.getPrice();
+    }*/
 }

@@ -1,10 +1,10 @@
 package ru.gb.spring_security_rest.converters;
 
 import org.springframework.stereotype.Component;
-import ru.gb.spring_security.model.Product;
-import ru.gb.spring_security.model.ProductDto;
-import ru.gb.spring_security.model.ProductFullDto;
-import ru.gb.spring_security.model.ProductToCartDto;
+import ru.gb.spring_security_rest.model.Product;
+import ru.gb.spring_security_rest.model.ProductDto;
+import ru.gb.spring_security_rest.model.ProductFullDto;
+import ru.gb.spring_security_rest.model.ProductToCartDto;
 
 @Component
 public class ProductConverter {

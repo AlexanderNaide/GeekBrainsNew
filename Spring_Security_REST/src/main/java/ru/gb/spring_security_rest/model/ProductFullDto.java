@@ -25,4 +25,14 @@ public class ProductFullDto {
 
     private String description;
 
+/*    public ProductFullDto(Product product) {
+        this.id = product.getId();
+        this.subCategory1 = product.getSubCategory1();
+        this.subCategory2 = product.getSubCategory2();
+        this.article = product.getArticle();
+        this.title = product.getTitle();
+        this.price = product.getPrice();
+        this.manufacturer = product.getManufacturer();
+        this.description = product.getDescription();
+    }*/
 }

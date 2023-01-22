@@ -1,4 +1,4 @@
-package ru.gb.spring_rest2;
+package ru.gb.spring_security_rest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

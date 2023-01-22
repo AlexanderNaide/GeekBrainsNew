@@ -5,9 +5,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
-import ru.gb.spring_security.model.Product;
-import ru.gb.spring_security.repository.ProductRepository;
-import ru.gb.spring_security.repository.specifications.ProductSpecifications;
+import ru.gb.spring_security_rest.model.Product;
+import ru.gb.spring_security_rest.repository.ProductRepository;
+import ru.gb.spring_security_rest.repository.specifications.ProductSpecifications;
 
 import java.util.List;
 import java.util.Optional;
