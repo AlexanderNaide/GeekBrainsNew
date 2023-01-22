@@ -4,61 +4,65 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.authentication.ProviderManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
-import ru.gb.spring_security2.services.UserService;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import ru.gb.spring_security2.api.MainFilter;
 
 @Configuration
 @RequiredArgsConstructor
 @Slf4j
 public class SecurityConfig {
-    private final UserService userService;
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
-        log.info("Dao Authentication Provider");
-
+    public SecurityFilterChain filterChain(MainFilter filter, HttpSecurity http) throws Exception{
         return http.
                 authorizeHttpRequests().
                 requestMatchers("/api/**").authenticated().
-//                requestMatchers("/messages").hasAnyRole("USER").
-//                requestMatchers("/admin/**").hasAnyRole("ADMIN", "SUPERADMIN").
-//                anyRequest().permitAll().
-//                and().formLogin().
-//                and().logout().invalidateHttpSession(true).deleteCookies("JSESSIONID").
-                and().build();
+                and().
+                addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class).
+                build();
     }
 
-/*    @Bean
-    public UserDetailsService users(){
+    @Bean
+    public WebSecurityCustomizer webSecurityCustomizer(){
+        // Это в развернутом виде, а ниже тоже самое, свернутое в лямбду
+//        return new WebSecurityCustomizer() {
+//            @Override
+//            public void customize(WebSecurity web) {
+//                web.ignoring().requestMatchers("/auth/**");
+//            }
+//        };
+
+        return webSecurity -> webSecurity.ignoring().requestMatchers("/auth/**");
+    }
+
+    @Bean
+    public UserDetailsService userDetailsService(){
         UserDetails user = User.builder()
                 .username("user")
-                .password("{noop}100")
-                .roles("USER")
+                .password("pass")
+                .authorities("ADMIN", "MANAGER")
                 .build();
-
-        UserDetails admin = User.builder()
-                .username("admin")
-                .password("{noop}101") //префикс {noop} в пароле не участвует, но означает, что это пароль в чистом виде, Хеш пароль обозначается префиксом {bcrypt}
-                .roles("USER", "ADMIN")
-                .build();
-
-        return new InMemoryUserDetailsManager(user, admin);
-    }*/
-
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
+        return new InMemoryUserDetailsManager(user);
     }
 
     @Bean
-    public DaoAuthenticationProvider daoAuthenticationProvider(){
-        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
-        daoAuthenticationProvider.setUserDetailsService(userService);
-        return daoAuthenticationProvider;
+    public AuthenticationManager authenticationManager(AuthenticationProvider... providers){
+        return new ProviderManager(providers);
+    }
+
+    @Bean
+    public AuthenticationProvider authenticationProvider(){
+        return new StandardAuthenticationProvider();
     }
 }
