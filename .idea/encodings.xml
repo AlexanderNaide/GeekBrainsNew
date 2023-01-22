@@ -21,6 +21,22 @@
     <file url="file://$PROJECT_DIR$/Spring_Security/src/main/java/ru/gb/spring_security/services/UserService.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/Spring_Security/src/main/java/ru/gb/spring_security_rest/configs" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/Spring_Security/src/main/resources/import.sql" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2/src/main/java/ru/gb/spring_security2/api/UserController.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2/src/main/java/ru/gb/spring_security2/api/UserController.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2/src/main/java/ru/gb/spring_security2/model/Role.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2/src/main/java/ru/gb/spring_security2/model/Role.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2/src/main/java/ru/gb/spring_security2/model/User.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2/src/main/java/ru/gb/spring_security2/model/User.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2/src/main/java/ru/gb/spring_security2/repository/RoleRepository.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2/src/main/java/ru/gb/spring_security2/repository/RoleRepository.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2/src/main/java/ru/gb/spring_security2/repository/UserRepository.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2/src/main/java/ru/gb/spring_security2/repository/UserRepository.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2/src/main/java/ru/gb/spring_security2/security/SecurityConfig.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2/src/main/java/ru/gb/spring_security2/security/SecurityConfig.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2/src/main/java/ru/gb/spring_security2/services/UserService.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2/src/main/java/ru/gb/spring_security2/services/UserService.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/Spring_Security2/src/main/resources/import.sql" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/Spring_Security_REST" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Spring_Security_REST/src/main/java/ru/gb/spring_security_rest/api/UserController.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/Spring_Security_REST/src/main/java/ru/gb/spring_security_rest/configs" charset="windows-1251" />
