@@ -35,6 +35,9 @@ public class MainFilter extends OncePerRequestFilter/*implements Filter*/ {
         System.out.println(request.getRequestURI());
         System.out.println("Parameters:");
         request.getParameterMap().forEach((a, e) -> System.out.println("[" + a + " " + Arrays.toString(e) + "]"));
+        System.out.println(request.getHeader("Authorization"));
+
+        response.setCharacterEncoding("UTF-8");
 
         String authorizationHeaderValue = request.getHeader(HttpHeaders.AUTHORIZATION);
         if(authorizationHeaderValue != null && authorizationHeaderValue.startsWith("Bearer ")){

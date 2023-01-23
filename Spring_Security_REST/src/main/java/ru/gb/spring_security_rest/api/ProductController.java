@@ -1,9 +1,13 @@
 package ru.gb.spring_security_rest.api;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ru.gb.spring_security_rest.converters.ProductConverter;
+import ru.gb.spring_security_rest.exceptions.AppError;
 import ru.gb.spring_security_rest.exceptions.ResourceNotFoundException;
 import ru.gb.spring_security_rest.model.ProductDto;
 import ru.gb.spring_security_rest.model.ProductFullDto;
@@ -15,21 +19,19 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequiredArgsConstructor // Р›РѕРјР±РѕРєРѕРІСЃРєР°СЏ Р°РЅРЅРѕС‚Р°С†РёСЏ, РєРѕС‚РѕСЂР°СЏ РёРЅРёС†РёР°Р»РёР·РёСЂСѓРµС‚ final РїРѕР»СЏ РІРјРµСЃС‚Рѕ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂР° СЃ @Autowired
+@RequiredArgsConstructor // Ломбоковская аннотация, которая инициализирует final поля вместо конструктора с @Autowired
 @RequestMapping("api/v1/products")
 public class ProductController {
 
     private final ProductService productService;
     private final ProductConverter productConverter;
 
-    private final CartService cartService;
-
     @GetMapping("/{id}")
     public ProductFullDto getProductById(@PathVariable Long id){
 //        return new ProductFullDto(productService.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND)));
 //        return productService.findById(id).map(ProductFullDto::new).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 //        return productService.findById(id).map(productConverter::entityToFullDto).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-        return productService.findById(id).map(productConverter::entityToFullDto).orElseThrow(() -> new ResourceNotFoundException("РџСЂРѕРґСѓРєС‚ РЅРµ РЅР°Р№РґРµРЅ РІ Р±Р°Р·Рµ РґР°РЅРЅС‹С… С‚РѕРІР°СЂРѕРІ, id:" + id));
+        return productService.findById(id).map(productConverter::entityToFullDto).orElseThrow(() -> new ResourceNotFoundException("Продукт не найден в базе данных товаров, id:" + id));
     }
 
     @PostMapping
@@ -68,23 +70,5 @@ public class ProductController {
             @RequestParam(required = false) String sub_cat
     ){
         return productService.findManufacturer(cat, sub_cat);
-    }
-
-    @PostMapping("/add_to_cart")
-    public void addToCart(@RequestParam Long id, @RequestParam(required = false, defaultValue = "1") Integer count){
-        cartService.addProduct(id, count);
-    }
-
-    @PostMapping("/dell_from_cart")
-    public void dellFromCart(@RequestParam Long id){
-        cartService.dellProduct(id);
-    }
-
-    @GetMapping("/cart")
-    public List<ProductToCartDto> getMapCart(){
-//        return cartService.getMapCart().entrySet().stream().collect(Collectors.toList((entry) -> productConverter.entityToDto(entry.getKey()), Map.Entry::getValue));
-        return cartService.getMapCart().entrySet().stream()
-                .map(entry -> productConverter.entityToCardDto(entry.getKey(), entry.getValue()))
-                .collect(Collectors.toList());
     }
 }

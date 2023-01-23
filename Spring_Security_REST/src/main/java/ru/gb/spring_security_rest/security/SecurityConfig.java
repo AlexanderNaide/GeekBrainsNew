@@ -26,7 +26,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(MainFilter filter, HttpSecurity http) throws Exception{
         return http.
                 authorizeHttpRequests().
-                requestMatchers("/api/v1/products/cart").authenticated().
+                requestMatchers("/api/v1/cart/**").authenticated().
                 anyRequest().permitAll().
 //                and().formLogin().
                 and().addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class).
@@ -43,7 +43,7 @@ public class SecurityConfig {
 //            }
 //        };
 
-        return webSecurity -> webSecurity.ignoring().requestMatchers("/auth/**");
+        return webSecurity -> webSecurity.ignoring().requestMatchers("/auth/**", "/api/v1/products/**");
     }
 
     @Bean

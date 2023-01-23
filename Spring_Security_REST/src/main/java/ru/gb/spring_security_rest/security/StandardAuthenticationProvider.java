@@ -24,12 +24,16 @@ public class StandardAuthenticationProvider extends AbstractUserDetailsAuthentic
     @Override
     protected void additionalAuthenticationChecks(UserDetails userDetails, UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
         if(!Objects.equals(userDetails.getPassword(), authentication.getCredentials())){
-            throw new BadCredentialsException("Bad credentials");
+            throw new BadCredentialsException("Пароль неверен.");
         }
     }
 
     @Override
-    protected UserDetails retrieveUser(String username, UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
-        return userDetailsService.loadUserByUsername(username);
+    protected UserDetails retrieveUser(String username, UsernamePasswordAuthenticationToken authentication){
+        try {
+            return userDetailsService.loadUserByUsername(username);
+        } catch (AuthenticationException e){
+            throw new BadCredentialsException("Пользователь не найден.");
+        }
     }
 }

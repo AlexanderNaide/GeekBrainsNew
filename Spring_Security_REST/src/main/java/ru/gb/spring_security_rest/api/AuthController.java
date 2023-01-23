@@ -29,9 +29,9 @@ public class AuthController {
     @PostMapping("/token")
     public AuthResponse token(@RequestBody AuthRequest request){
         log.info("Request from: {}", request.getUsername());
-        Authentication authenticate = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
-        );
+        UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword());
+
+        Authentication authenticate = authenticationManager.authenticate(authenticationToken);
         UserDetails user = (UserDetails) authenticate.getPrincipal();
         String token = jwtService.generateToken(user);
         return new AuthResponse(token);
