@@ -241,19 +241,10 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
     $scope.buttonCart = function () {
         $scope.buttonCartTitle = token === null ? 'Авторизация' : 'Корзина';
         $scope.buttonTargetClick = token === null ? '#modalAuthentication' : '#exampleModalCart';
-        // $scope.buttonAddToCart = token === null ? 'style="display: none"' : 'style="display: block"';
-        // $('#addToCartButton').style.display="none";
-        // $('.add-cart-button').style.background = "black";
-        // $('.add-cart-button').prop('style', 'display: none');
-        // $('.add-cart-button').style.visibility = 'hidden';
-        // $('.add-cart-button').style.hide();
-        //     $('#addToCartButton').style.background = "black";
-        // if(token !== null){
-        //     $('#addToCartButton').style.prop('display', 'block');
-        // }
+    };
 
-
-        // style="display: none"
+    $scope.buttonAddCart = function () {
+        return token !== null;
     };
 
     $scope.filter = null;
@@ -261,7 +252,6 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
     $scope.categories();
     $scope.manufacturer();
     $scope.buttonCart();
-    // $scope.showCart();
     $('#sub').prop( 'disabled',true );
 
 });

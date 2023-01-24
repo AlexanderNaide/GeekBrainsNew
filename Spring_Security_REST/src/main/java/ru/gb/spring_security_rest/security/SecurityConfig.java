@@ -35,14 +35,6 @@ public class SecurityConfig {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer(){
-        // Это в развернутом виде, а ниже тоже самое, свернутое в лямбду
-//        return new WebSecurityCustomizer() {
-//            @Override
-//            public void customize(WebSecurity web) {
-//                web.ignoring().requestMatchers("/auth/**");
-//            }
-//        };
-
         return webSecurity -> webSecurity.ignoring().requestMatchers("/auth/**", "/api/v1/products/**");
     }
 
