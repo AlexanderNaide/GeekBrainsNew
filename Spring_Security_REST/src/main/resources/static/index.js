@@ -104,7 +104,9 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
         $http({
             url: contextPathCart,
             method: 'GET',
-            headers: { Authorization: "Bearer " + token }
+            headers: {
+                Authorization: "Bearer " + token
+            }
         }).then(function (response) {
             $scope.CardList = response.data;
             $scope.CardTotalSize = $scope.CardList.length;
