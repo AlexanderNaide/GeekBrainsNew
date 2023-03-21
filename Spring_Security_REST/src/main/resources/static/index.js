@@ -1,7 +1,11 @@
 angular.module('app', []).controller('indexController', function ($scope, $http) {
     const contextPath = 'http://localhost:8080/api/v1/products';
+    const contextPathAuth = 'http://localhost:8080/auth';
+    const contextPathCart = 'http://localhost:8080/api/v1/cart';
     let number = 1;
     let totalNumber;
+    let token = null;
+    $scope.modalStatus = null;
 
     $scope.updateProducts = function () {
         let min;
@@ -60,9 +64,9 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
     $scope.getProduct = function (id) {
         $http({
             url: contextPath + "/" + id,
+            // url: contextPath + "/" + 5965165165,
             method: 'GET'
         }).then(function (response) {
-            // console.log(response);
             $scope.Product = response.data;
             let descStr = response.data.description;
             let st = descStr.indexOf("<");
@@ -72,6 +76,8 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
                 let desc = descStr.slice(0, st);
                 $scope.ProductDescription = desc.split("; ");
             }
+        }).catch(function (response) {
+            alert(response.data.message)
         });
     };
 
@@ -96,8 +102,11 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
 
     $scope.showCart = function () {
         $http({
-            url: contextPath + "/cart",
-            method: 'GET'
+            url: contextPathCart,
+            method: 'GET',
+            headers: {
+                Authorization: "Bearer " + token
+            }
         }).then(function (response) {
             $scope.CardList = response.data;
             $scope.CardTotalSize = $scope.CardList.length;
@@ -116,8 +125,11 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
 
     $scope.addToCart = function (id, count) {
         $http({
-            url: contextPath + "/add_to_cart",
-            method: 'POST',
+            url: contextPathCart + "/add_to_cart",
+            method: 'GET',
+            headers: {
+                Authorization: "Bearer " + token
+            },
             params: {
                 id: id,
                 count: count
@@ -129,8 +141,11 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
 
     $scope.deleteProductFromCart = function (id) {
         $http({
-            url: contextPath + "/dell_from_cart",
-            method: 'POST',
+            url: contextPathCart + "/dell_from_cart",
+            method: 'GET',
+            headers: {
+                Authorization: "Bearer " + token
+            },
             params: {
                 id: id
             }
@@ -206,11 +221,39 @@ angular.module('app', []).controller('indexController', function ($scope, $http)
         $scope.updateProducts();
     };
 
+    $scope.authentications = function () {
+        $http.post(contextPathAuth + '/token', $scope.auth)
+            .then(function (response) {
+                console.log(response.data);
+                token = response.data.token;
+                $scope.buttonCart();
+                $('#authRes').click();
+            }).catch(function (response) {
+                console.log(response.data.message)
+            $scope.modalStatus = response.data.message;
+        });
+    };
+
+    $scope.buttonCartFunction = function () {
+        if(token !== null){
+            $scope.showCart();
+        }
+    };
+
+    $scope.buttonCart = function () {
+        $scope.buttonCartTitle = token === null ? 'Авторизация' : 'Корзина';
+        $scope.buttonTargetClick = token === null ? '#modalAuthentication' : '#exampleModalCart';
+    };
+
+    $scope.buttonAddCart = function () {
+        return token !== null;
+    };
+
     $scope.filter = null;
     $scope.loadProducts();
     $scope.categories();
     $scope.manufacturer();
-    $scope.showCart();
+    $scope.buttonCart();
     $('#sub').prop( 'disabled',true );
 
 });
