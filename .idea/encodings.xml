@@ -44,6 +44,8 @@
     <file url="file://$PROJECT_DIR$/Spring_Security_REST/src/main/java/ru/gb/spring_security_rest/security/StandardAuthenticationProvider.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/Spring_Security_REST/src/main/java/ru/gb/spring_security_rest/services/JwtService.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/Spring_Security_REST/src/main/java/ru/gb/spring_security_rest/services/UserService.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/patterns/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/patterns/src/main/resources" charset="UTF-8" />
     <file url="PROJECT" charset="windows-1251" />
   </component>
 </project>
