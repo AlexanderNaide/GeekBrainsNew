@@ -1,4 +1,4 @@
-package ru.gb.patterns.creations.factory.madel;
+package ru.gb.patterns.creations.abstractFactory.animalFactory.madel;
 
 public class Cat extends Animal{
 

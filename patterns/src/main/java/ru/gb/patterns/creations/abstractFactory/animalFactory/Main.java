@@ -1,8 +1,4 @@
-package ru.gb;
-
-import ru.gb.patterns.creations.factory.AnimalFactory;
-import ru.gb.patterns.creations.factory.CatFactory;
-import ru.gb.patterns.creations.factory.DogFactory;
+package ru.gb.patterns.creations.abstractFactory.animalFactory;
 
 public class Main {
 
