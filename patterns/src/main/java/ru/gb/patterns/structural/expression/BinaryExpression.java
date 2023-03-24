@@ -1,4 +1,4 @@
-package ru.gb.patterns.structural.Expression;
+package ru.gb.patterns.structural.expression;
 
 public abstract class BinaryExpression implements Expression {
 
@@ -11,15 +11,18 @@ public abstract class BinaryExpression implements Expression {
         this.operation = operation;
     }
 
+    public Expression getLeft() {
+        return left;
+    }
+
+    public Expression getRight() {
+        return right;
+    }
+
     @Override
     public int eval() {
         return operation.apply(left, right);
     }
 
 
-    /**
-     *
-     * ******   1:00:00   ******
-     *
-     */
 }

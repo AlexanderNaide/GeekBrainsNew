@@ -1,4 +1,4 @@
-package ru.gb.patterns.structural.Expression;
+package ru.gb.patterns.structural.expression;
 
 public interface BinaryOperation {
 
