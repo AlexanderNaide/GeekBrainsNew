@@ -18,11 +18,11 @@ public class BobbleSort {
     public static void main(String[] args) {
         int[] array = new int[]{9, 2, 5, 7, 3, 4, 1, 6, 8};
         System.out.println(Arrays.toString(array));
-        search(array);
+        sort(array);
         System.out.println(Arrays.toString(array));
     }
 
-    public static void search(int[] array) {
+    public static void sort(int[] array) {
         boolean needSort;
         do {
             needSort = false;
