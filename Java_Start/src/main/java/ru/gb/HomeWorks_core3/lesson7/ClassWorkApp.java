@@ -65,7 +65,7 @@ public class ClassWorkApp {
         System.out.println(cat.info());
 
         Dog dog = new Dog();
-        dog.setName("Chirsse");
+        dog.setName("Chrisse");
         Dog dog2 = new Dog("Sharick");
     }
 }
